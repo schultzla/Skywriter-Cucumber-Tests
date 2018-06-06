@@ -16,8 +16,11 @@ public class UserAuthentication {
 	
 	@Given("^User is on the main login page$")
 	public void userOnMainPage() {
-        	WebDriverManager.chromedriver().setup();
-        	WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver(options);
 
 		driver.get("https://skywriter.innvosolutions.com");
 	}
@@ -35,7 +38,7 @@ public class UserAuthentication {
 
  		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div/form[1]/div[4]/div/button")).click();
  		
- 		assert(driver.getPageSource().contains("Welcome Administrator"));
+ 		assert(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-home/div[1]/h1")).getText().equals("User Dashboard"));
  		
  		driver.quit();
 	}

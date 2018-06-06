@@ -19,9 +19,11 @@ public class ContactCreation {
 
 	@Given("^User is on the add contact page$")
 	public void userOnMainPage() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
 
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 		
 
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
