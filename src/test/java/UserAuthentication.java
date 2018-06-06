@@ -20,15 +20,11 @@ public class UserAuthentication {
 		options.addArguments("--headless");
 
 		driver = new ChromeDriver(options);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 		driver.get("https://skywriter.innvosolutions.com");
 	}
 	
 	@When("^User enters dev.admin into user and password$")
 	public void userEntersCredentials() {
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("dev.admin");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("admin");
 	}
