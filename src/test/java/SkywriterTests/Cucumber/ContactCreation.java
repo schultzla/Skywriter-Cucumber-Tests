@@ -46,11 +46,11 @@ public class ContactCreation {
 	@Then("^Skywriter \"([^\"]*)\" creating contact$")
 	public void skywriterCreatesThisContactSuccesfully(String arg1) {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+		
 		if (arg1.equals("Passes")) {
 			String name = firstName + " " + lastName;
-			driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/breadcrumb/div/div/ol/li[2]/a")).click();
-
+			driver.get("https://skywriter.innvosolutions.com/#/contact-skywriter");
+			
 			assert(driver.getPageSource().contains(name));
 		} else {
 			boolean failure = driver.findElement(By.xpath("//*[@id=\"contactinfo\"]/div/div/div/div[2]/div[2]")).
