@@ -1,4 +1,4 @@
-package SkywriterTests.Cucumber.Tests;
+package SkywriterTests.Cucumber;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
