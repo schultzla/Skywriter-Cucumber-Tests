@@ -59,18 +59,6 @@
 		</dependency>
 		
 		<dependency>
-		    <groupId>com.vimalselvam</groupId>
-		    <artifactId>cucumber-extentsreport</artifactId>
-		    <version>3.0.2</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>com.aventstack</groupId>
-		    <artifactId>extentreports</artifactId>
-		    <version>3.0.6</version>
-		</dependency>
-		
-		<dependency>
 		    <groupId>info.cukes</groupId>
 		    <artifactId>cucumber-picocontainer</artifactId>
 		    <version>1.2.4</version>
