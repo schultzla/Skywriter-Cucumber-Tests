@@ -25,6 +25,7 @@ public class UserAuthentication {
 	
 	@When("^User enters dev.admin into user and password$")
 	public void userEntersCredentials() {
+		
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("dev.admin");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("admin");
 	}
