@@ -16,10 +16,8 @@ public class UserAuthentication {
 	@Given("^User is on the main login page$")
 	public void userOnMainPage() {
 		System.setProperty("webdriver.chrome.driver", "/Users/loganschultz/Desktop/github/jhipster/chromedriver");
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-
-		driver = new ChromeDriver(options);
+		
+		driver = new ChromeDriver();
 		driver.get("https://skywriter.innvosolutions.com");
 	}
 	

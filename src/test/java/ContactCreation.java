@@ -19,10 +19,8 @@ public class ContactCreation {
 	@Given("^User is on the add contact page$")
 	public void userOnMainPage() {
 		System.setProperty("webdriver.chrome.driver", "/Users/loganschultz/Desktop/github/jhipster/chromedriver");
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
 		
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
