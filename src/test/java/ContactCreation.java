@@ -18,7 +18,7 @@ public class ContactCreation {
 	
 	@Given("^User is on the add contact page$")
 	public void userOnMainPage() {
-		System.setProperty("webdriver.chrome.driver", "/Users/loganschultz/Desktop/github/jhipster/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Cucumber/chromedriver");
 		
 		driver = new ChromeDriver();
 		

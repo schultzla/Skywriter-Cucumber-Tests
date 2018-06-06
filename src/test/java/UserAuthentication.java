@@ -15,7 +15,7 @@ public class UserAuthentication {
 	
 	@Given("^User is on the main login page$")
 	public void userOnMainPage() {
-		System.setProperty("webdriver.chrome.driver", "/Users/loganschultz/Desktop/github/jhipster/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "/Cucumber/chromedriver");
 		
 		driver = new ChromeDriver();
 		driver.get("https://skywriter.innvosolutions.com");
@@ -34,7 +34,7 @@ public class UserAuthentication {
 
  		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div/form[1]/div[4]/div/button")).click();
  		
- 		assert(driver.getPageSource().contains("Welcome"));
+ 		assert(driver.getPageSource().contains("Welcome Administrator"));
  		
  		driver.quit();
 	}
