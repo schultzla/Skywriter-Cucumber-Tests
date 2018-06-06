@@ -18,6 +18,6 @@ import cucumber.api.junit.Cucumber;
 		
 		)
 
-public class RunUserTest {
+public class RunAllTest {
 	
 }
