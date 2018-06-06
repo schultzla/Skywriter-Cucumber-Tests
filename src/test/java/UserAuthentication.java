@@ -9,15 +9,16 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UserAuthentication {
 	WebDriver driver;
 	
 	@Given("^User is on the main login page$")
 	public void userOnMainPage() {
-		System.setProperty("webdriver.chrome.driver", "./chromedriver");
-		
-		driver = new ChromeDriver();
+        	WebDriverManager.chromedriver().setup();
+        	WebDriver driver = new ChromeDriver();
+
 		driver.get("https://skywriter.innvosolutions.com");
 	}
 	
