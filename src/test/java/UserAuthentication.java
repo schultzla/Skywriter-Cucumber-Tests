@@ -38,7 +38,7 @@ public class UserAuthentication {
 
  		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div/form[1]/div[4]/div/button")).click();
  		
- 		assert(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-home/div[1]/h1")).getText().equals("User Dashboard"));
+ 		assert(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-home/div[1]/h1")).getText().contains("User Dashboard"));
  		
  		driver.quit();
 	}
