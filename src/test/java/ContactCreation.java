@@ -1,11 +1,7 @@
-
-
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -19,11 +15,8 @@ public class ContactCreation {
 
 	@Given("^User is on the add contact page$")
 	public void userOnMainPage() {
-		ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-
 		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(options);
+		driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
