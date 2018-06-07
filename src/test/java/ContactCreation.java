@@ -22,13 +22,14 @@ public class ContactCreation {
 
 		driver.get("https://skywriter.innvosolutions.com");
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("dev.admin");
-		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("admin");		
+		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("admin");	
 
 		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div/form[1]/div[4]/div/button")).click();
 
 		driver.findElement(By.xpath("//*[@id=\"sidebarnav\"]/li[2]/a")).click(); 
 		driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-contact-skywriter/div/div/div/div/div[1]/ul/li[3]/button")).click();
 	}
+	
 
 	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\" name$")
 	public void userEntersAFirstAndLastName(String arg1, String arg2) {
