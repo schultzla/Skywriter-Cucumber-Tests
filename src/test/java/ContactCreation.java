@@ -20,13 +20,13 @@ public class ContactCreation {
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-		driver.get("https://skywriter.innvosolutions.com");
+		driver.get("http://localhost:8080/");
 		driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("dev.admin");
 		driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("admin");	
 
 		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div/form[1]/div[4]/div/button")).click();
 
-		driver.findElement(By.xpath("//*[@id=\"sidebarnav\"]/li[2]/a")).click(); 
+		driver.findElement(By.xpath("//*[@id=\"contact-menu\"]/span")).click(); 
 		driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-contact-skywriter/div/div/div/div/div[1]/ul/li[3]/button")).click();
 	}
 	
@@ -39,6 +39,12 @@ public class ContactCreation {
 		driver.findElement(By.xpath("//*[@id=\"nameFirst\"]")).sendKeys(arg1);
 		driver.findElement(By.xpath("//*[@id=\"nameLast\"]")).sendKeys(arg2);
 		driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-new-contact/div/div[2]/form/div/div[1]/div[2]/button[2]")).click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Then("^Skywriter \"([^\"]*)\" creating contact$")
@@ -47,7 +53,6 @@ public class ContactCreation {
 
 		if (arg1.equals("Passes")) {
 			String name = firstName + " " + lastName;
-			driver.findElement(By.xpath("//*[@id=\"sidebarnav\"]/li[2]/a")).click(); 
 
 			String siteName = driver.findElement(By.xpath(
 					"//*[@id=\"main-wrapper\"]/div/div/jhi-contact-skywriter-detail/div/div[1]/div[1]/div/div[1]/div[2]")).getText();

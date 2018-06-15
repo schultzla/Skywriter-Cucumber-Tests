@@ -15,7 +15,7 @@ public class UserAuthentication {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 
-		driver.get("https://skywriter.innvosolutions.com");
+		driver.get("http://localhost:8080/");
 	}
 	
 	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\" as credentials$")
@@ -31,7 +31,7 @@ public class UserAuthentication {
 		if (arg1.equals("Passes")) {
 	 		driver.findElement(By.xpath("//*[@id=\"wrapper\"]/div/div/form[1]/div[4]/div/button")).click();
 	 		
-	 		assert(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-home/div[1]/h1")).getText().contains("User Dashboard"));
+	 		assert(driver.findElement(By.xpath("//*[@id=\"main-wrapper\"]/div/div/jhi-home/div[1]/h1")).getText().contains("Dashboard"));
 		} else {
 			//TODO add failure cases 
 		}
